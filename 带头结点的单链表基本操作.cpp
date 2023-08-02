@@ -15,6 +15,7 @@ bool ListDelete(LinkList&L,int i,int e);//删除位序i的结点，e是i结点�
 bool DeleteNode(LNode*p) ;//删除指定结点P
 LinkList List_TailInsert(LinkList&L,int a[],int n);//尾插法,带头结点
 LinkList List_HeadInsert(LinkList&L,int a[],int n);//头插法，带头结点
+void print(LinkList L);//打印带头结点的单链表
 
 LinkList List_TailInsert(LinkList&L,int a[],int n){//尾插法，带头结点
     L=(LinkList)malloc(sizeof(LNode));
