@@ -27,6 +27,7 @@ LinkList List_TailInsert(LinkList&L,int a[],int n){//尾插法，带头结点
         r=s;
     }
     r->next=NULL;
+    return L;
 }
 LinkList List_HeadInsert(LinkList&L,int a[],int n) {//头插法，带头结点
     L=(LNode*)malloc(sizeof(LNode));
@@ -38,6 +39,7 @@ LinkList List_HeadInsert(LinkList&L,int a[],int n) {//头插法，带头结点
         s->next=L->next;
         L->next=s;
     }
+    return L;
 }
 bool InitList(LinkList&L){//初始化
     L=(LNode*)malloc(sizeof(LNode));
@@ -46,9 +48,9 @@ bool InitList(LinkList&L){//初始化
     return true;
 }
 LNode* GetElem(LinkList L,int i){//按序号查找结点
-    if(i<1) return NULL;
-    int j=1;
-    LNode*p=L->next;
+    if(i<0) return NULL;
+    int j=0;
+    LNode*p=L;
     while(p&&j<i){
         p=p->next;
         j++;
@@ -139,7 +141,9 @@ void print(LinkList L){
 int main(){
     LinkList L;
     int a[]={1,2,3,4,5,6,7};
-    List_TailInsert(L,a,7);
+    List_TailInsert(L,a,4);
     printf("尾插法的结果：");
+    int e;
+    ListDelete(L,1,e);
     print(L);
 }
